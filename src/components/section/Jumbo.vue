@@ -1,6 +1,10 @@
 <template>
-  <div class="container">
-    <div class="jumbo">
+  <div id="container">
+    <!--Arrows-->
+    <i class="fas fa-chevron-left arrow arrow-left"></i>
+    <i class="fas fa-chevron-right arrow arrow-right"></i>
+    <div class="container jumbo">
+      <!--Jumbo_Heading-->
       <div class="jumbo-heading">
         <h1>Devotion that never<em class="text-bold">ends</em></h1>
 
@@ -9,18 +13,19 @@
         <a class="header-link" href="#">Read More</a>
       </div>
       <div class="jumbo-image">
+        <!--Big Images-->
         <div class="big-image">
-          <img src="../../assets\illustration\img\h-2-slider-img-15.png" />
-          <img src="../../assets\illustration\img\h-2-slider-img-16.png" />
+          <img src="../../assets/illustration/img/h-2-slider-img-15.png" />
+          <img src="../../assets/illustration/img/h-2-slider-img-16.png" />
         </div>
 
         <!--Small Images-->
-        <img src="../../assets\illustration\img\short-slider-rev-1-img-2.png" class="small-image small-image-1" />
-        <img src="../../assets\illustration\img\h-2-slider-img-12.png" class="small-image small-image-2" />
-        <img src="../../assets\illustration\img\h-2-slider-img-13.png" class="small-image small-image-3" />
-        <img src="../../assets\illustration\img\h-2-slider-img-14.png" class="small-image small-image-4" />
-        <img src="../../assets\illustration\img\short-slider-rev-1-img-6.png" class="small-image small-image-5" />
-        <img src="../../assets\illustration\img\h-2-slider-img-17.png" class="small-image small-image-6" />
+        <img src="../../assets/illustration/img/short-slider-rev-1-img-2.png" class="small-image small-image-1" />
+        <img src="../../assets/illustration/img/h-2-slider-img-12.png" class="small-image small-image-2" />
+        <img src="../../assets/illustration/img/h-2-slider-img-13.png" class="small-image small-image-3" />
+        <img src="../../assets/illustration/img/h-2-slider-img-14.png" class="small-image small-image-4" />
+        <img src="../../assets/illustration/img/short-slider-rev-1-img-6.png" class="small-image small-image-5" />
+        <img src="../../assets/illustration/img/h-2-slider-img-17.png" class="small-image small-image-6" />
       </div>
     </div>
   </div>
@@ -34,6 +39,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/style/reusable.scss";
+
+#container {
+  position: relative;
+}
 
 .jumbo {
   padding: 100px 0px;
@@ -50,12 +59,10 @@ export default {
     }
 
     p {
-      color: #878787;
       margin: 20px 0px 40px 0px;
     }
 
     .text-bold {
-      font-family: "Domine", serif;
       font-weight: bold;
     }
 
@@ -113,4 +120,25 @@ export default {
     }
   }
 }
+
+.arrow {
+    background-color: #e1c0b0;
+    color: #fff;
+    font-size: 16px;
+    width: 15px;
+    height: 15px;
+    padding: 5px;
+    border-radius: 50%;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  .arrow-left {
+    left: 0;
+  }
+
+  .arrow-right {
+    right: 0;
+  }
 </style>
