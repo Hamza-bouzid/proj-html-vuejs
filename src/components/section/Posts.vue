@@ -21,16 +21,22 @@ export default {
           image: require("../../assets/illustration/img/h-2-blog-img-1.jpg"),
           text: "This way, loves: a detailed guide trhough new design",
           author: "Emily Fileds",
+          postNumber: "07",
+          date: "May '19",
         },
         {
           image: require("../../assets/illustration/img/h-2-blog-img-2.jpg"),
           text: "I try to give people a different way of loking art",
           author: "Emily Fileds",
+          postNumber: "07",
+          date: "May '19",
         },
         {
           image: require("../../assets/illustration/img/h-2-blog-img-3.jpg"),
           text: "Introduce Richard Laperrière of those amazing features",
           author: "Emily Fileds",
+          postNumber: "07",
+          date: "May '19",
         },
       ],
     };

@@ -26,11 +26,6 @@ export default {
   flex-direction: column;
   text-align: center;
 
-  h2 {
-    font-size: 50px;
-    font-weight: 400;
-  }
-
   p {
     margin: 20px 0px 30px 0px;
   }

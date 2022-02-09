@@ -7,10 +7,10 @@
     </div>
     <div class="post-date">
       <div class="post-date_number">
-        <em>07</em>
+        <em>{{ post.postNumber }}</em>
       </div>
       <div class="post-date_day">
-        <span>May '19</span>
+        <span>{{ post.date }}</span>
       </div>
     </div>
   </div>
@@ -28,7 +28,7 @@ export default {
 
 <style lang="scss" scoped>
 .post {
-  width: 330px;
+  width: 350px;
   margin: 0px 10px;
   position: relative;
   img {

@@ -9,7 +9,9 @@
         <img src="../assets/illustration/svg/svg-1.svg" />
       </div>
     </div>
-    <Jumbo />
+    <div class="container-large">
+      <Jumbo />
+    </div>
   </header>
 </template>
 

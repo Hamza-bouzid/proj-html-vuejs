@@ -1,5 +1,5 @@
 <template>
-  <div class="projects">
+  <div class="projects container-large">
     <!--Project 1-->
     <div id="card-1" class="projects-image">
       <img src="../../assets/illustration/img/h-2-port-img-1.jpg" />
@@ -159,7 +159,7 @@ export default {
 #card-5:hover .placeholder,
 #card-6:hover .placeholder {
   display: block;
-  animation: from-left 0.4s;
+  animation: from-left 0.4s ease-out;
 }
 
 @keyframes from-left {
