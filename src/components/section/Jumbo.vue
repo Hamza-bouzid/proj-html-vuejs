@@ -1,8 +1,8 @@
 <template>
   <div id="container">
     <!--Arrows-->
-    <i class="fas fa-chevron-left arrow arrow-left"></i>
-    <i class="fas fa-chevron-right arrow arrow-right"></i>
+    <a @click="prev"><i class="fas fa-chevron-left arrow arrow-left"></i></a>
+    <a @click="next"><i class="fas fa-chevron-right arrow arrow-right"></i></a>
     <div class="container jumbo">
       <!--Jumbo_Heading-->
       <div class="jumbo-heading">
@@ -13,10 +13,25 @@
         <a class="header-link" href="#">Read More</a>
       </div>
       <div class="jumbo-image">
-        <!--Big Images-->
-        <div class="big-image">
-          <img src="../../assets/illustration/img/h-2-slider-img-15.png" />
-          <img src="../../assets/illustration/img/h-2-slider-img-16.png" />
+        <!--Slider 1-->
+        <div v-if="counter == 1" class="slide-1">
+          <!--Big Images-->
+          <div class="big-image">
+            <img src="../../assets/illustration/img/h-2-slider-img-15.png" />
+            <img src="../../assets/illustration/img/h-2-slider-img-16.png" />
+          </div>
+        </div>
+        <!--Slider 2-->
+        <div v-if="counter == 2" class="slide-2">
+          <div class="big-image">
+            <img src="../../assets/illustration/img/h-2-slider-img-11.png" />
+          </div>
+        </div>
+        <!--Slider 3-->
+        <div v-if="counter == 3" class="slide-3">
+          <div class="big-image">
+            <img src="../../assets/illustration/img/short-slider-rev-1-img-3.png" />
+          </div>
         </div>
 
         <!--Small Images-->
@@ -27,6 +42,12 @@
         <img src="../../assets/illustration/img/short-slider-rev-1-img-6.png" class="small-image small-image-5" />
         <img src="../../assets/illustration/img/h-2-slider-img-17.png" class="small-image small-image-6" />
       </div>
+
+      <div class="dots">
+        <a @click="dotActive(1)" :class="{ big: counter == 1 }"><i class="fa-solid fa-circle"></i></a>
+        <a @click="dotActive(2)" :class="{ big: counter == 2 }"><i class="fa-solid fa-circle"></i></a>
+        <a @click="dotActive(3)" :class="{ big: counter == 3 }"><i class="fa-solid fa-circle"></i></a>
+      </div>
     </div>
   </div>
 </template>
@@ -34,6 +55,32 @@
 <script>
 export default {
   name: "Jumbo",
+
+  data() {
+    return {
+      active: true,
+      counter: 1,
+    };
+  },
+
+  methods: {
+    next: function () {
+      this.counter++;
+      if (this.counter > 3) {
+        this.counter = 1;
+      }
+    },
+    prev: function () {
+      this.counter--;
+      if (this.counter < 1) {
+        this.counter = 3;
+      }
+    },
+
+    dotActive: function (slide) {
+      this.counter = slide;
+    },
+  },
 };
 </script>
 
@@ -42,6 +89,7 @@ export default {
 
 #container {
   position: relative;
+  user-select: none;
 }
 
 .jumbo {
@@ -82,10 +130,23 @@ export default {
     @include display-flex(center);
     position: relative;
 
+    .slide-1 {
+      .big-image {
+        img {
+          width: 250px;
+          height: 320px;
+          object-fit: contain;
+        }
+      }
+    }
+
     .big-image {
+      width: 500px;
+      height: 320px;
       img {
-        width: 250px;
-        height: 320px;
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
       }
     }
 
@@ -122,23 +183,42 @@ export default {
 }
 
 .arrow {
-    background-color: #e1c0b0;
-    color: #fff;
-    font-size: 16px;
-    width: 15px;
-    height: 15px;
-    padding: 5px;
-    border-radius: 50%;
+  background-color: #e1c0b0;
+  color: #fff;
+  font-size: 16px;
+  width: 15px;
+  height: 15px;
+  padding: 5px;
+  border-radius: 50%;
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.arrow-left {
+  left: 0;
+}
+
+.arrow-right {
+  right: 0;
+}
+
+.dots {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  @include display-flex(center);
+
+  a {
+    font-size: 8px;
+    color: #e1c0b0;
+    margin: 0px 10px;
     cursor: pointer;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-  }
-  .arrow-left {
-    left: 0;
   }
 
-  .arrow-right {
-    right: 0;
+  .big {
+    font-size: 11px;
   }
+}
 </style>
