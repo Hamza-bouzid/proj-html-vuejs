@@ -47,8 +47,8 @@
     <!--Project 6-->
     <div id="card-6" class="projects-image small-image-arrow">
       <img src="../../assets/illustration/img/h-2-port-img-6.jpg" />
-      <a href="#"><img class="arrow-up arrow-top" src="../../assets/illustration/svg/svg-2.svg" /></a>
-      <a href="#"><img class="arrow-up arrow-bottom" src="../../assets/illustration/svg/svg-2.svg" /></a>
+      <ArrowBottom />
+      <ArrowTop />
       <div class="placeholder">
         <h3>Illustrations of novels</h3>
         <em>Illustration</em>
@@ -58,8 +58,16 @@
 </template>
 
 <script>
+import ArrowBottom from "../common/ArrowBottom.vue";
+import ArrowTop from "../common/ArrowTop.vue";
+
 export default {
   name: "Projects",
+
+  components: {
+    ArrowBottom,
+    ArrowTop,
+  },
 };
 </script>
 
@@ -133,23 +141,6 @@ export default {
 
 .small-image-arrow {
   position: relative;
-
-  .arrow-up {
-    position: absolute;
-    right: 10px;
-    background-color: #c0e1cf;
-    width: 30px;
-    height: 30px;
-    padding: 8px;
-  }
-
-  .arrow-top {
-    top: 0;
-  }
-
-  .arrow-bottom {
-    bottom: 20px;
-  }
 }
 
 #card-1:hover .placeholder,

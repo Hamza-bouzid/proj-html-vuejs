@@ -1,5 +1,6 @@
 <template>
   <footer>
+    <ArrowBottom />
     <div class="container">
       <div class="footer">
         <div class="footer-logo">
@@ -23,10 +24,10 @@
         <div class="footer-social">
           <span class="hb_margin-bottom">Stay in touch with us</span>
           <div class="footer-socila_links">
-            <a href=""><i class="fa-brands fa-twitter"></i></a>
-            <a href=""><i class="fa-brands fa-pinterest-p"></i></a>
-            <a href=""><i class="fa-brands fa-facebook-f"></i></a>
-            <a href=""><i class="fa-brands fa-linkedin-in"></i></a>
+            <a href="#"><i class="fa-brands fa-twitter"></i></a>
+            <a href="#"><i class="fa-brands fa-pinterest-p"></i></a>
+            <a href="#"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="#"><i class="fa-brands fa-linkedin-in"></i></a>
           </div>
         </div>
       </div>
@@ -35,8 +36,13 @@
 </template>
 
 <script>
+import ArrowBottom from "./common/ArrowBottom.vue";
 export default {
   name: "Footer",
+
+  components: {
+    ArrowBottom,
+  },
 };
 </script>
 
@@ -46,6 +52,7 @@ footer {
   padding: 50px 0px;
   background-color: #c0e1cf;
   font-size: 12px;
+  position: relative;
 }
 
 span {

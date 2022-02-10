@@ -42,6 +42,10 @@ h4 {
     BASIC STYLE
 *****************************/
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: "Poppins", sans-serif;
 }
@@ -61,4 +65,13 @@ body {
   font-weight: 600;
   font-size: 12px;
   letter-spacing: 1.5px;
+}
+
+.arrow-up {
+  position: absolute;
+  right: 10px;
+  background-color: #c0e1cf;
+  width: 30px;
+  height: 30px;
+  padding: 8px;
 }

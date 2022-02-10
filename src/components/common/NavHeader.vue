@@ -2,9 +2,9 @@
   <nav>
     <ul>
       <li>
-        <a class="header-link" :href="link.url"
+        <a  class="header-link" :href="link.url"
           >{{ link.name }}
-          <div class="hover-active" :class="{ active: link.active }"></div>
+          <div v-if="counter == link.id" class="hover-active active"></div>
         </a>
       </li>
     </ul>
@@ -17,6 +17,7 @@ export default {
 
   props: {
     link: Object,
+    counter: Number,
   },
 };
 </script>

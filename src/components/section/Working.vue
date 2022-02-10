@@ -1,23 +1,28 @@
 <template>
-  <div class="working container">
-    <div class="heading">
-      <h2>Working <em>process</em></h2>
+  <div class="arrow">
+    <ArrowBottom />
+    <div class="working container">
+      <div class="heading">
+        <h2>Working <em>process</em></h2>
+      </div>
+      <div class="cards">
+        <WorkingCard v-for="(elem, index) in cards" :key="index" :card="elem" />
+      </div>
+      <img class="line" src="../../assets/illustration/svg/svg-3.svg" />
     </div>
-    <div class="cards">
-      <WorkingCard v-for="(elem, index) in cards" :key="index" :card="elem" />
-    </div>
-    <img class="line" src="../../assets/illustration/svg/svg-3.svg" />
   </div>
 </template>
 
 <script>
 import WorkingCard from "../common/WorkingCard.vue";
+import ArrowBottom from "../common/ArrowBottom.vue";
 
 export default {
   name: "Working",
 
   components: {
     WorkingCard,
+    ArrowBottom,
   },
 
   data() {
@@ -51,6 +56,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "../../assets/style/reusable.scss";
+
+.arrow {
+  position: relative;
+}
 
 .working {
   padding: 120px 0px;

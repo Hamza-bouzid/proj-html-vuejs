@@ -194,6 +194,10 @@ export default {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
+
+  &:hover {
+    background-color: #c4a08e;
+  }
 }
 .arrow-left {
   left: 0;
