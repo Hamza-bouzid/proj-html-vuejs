@@ -1,11 +1,11 @@
 <template>
-  <header>
+  <header id="Home">
     <div class="navigation">
       <div class="logo">
         <a href="#"><img src="../assets/illustration/img/logo-sidearea-1.png" /></a>
       </div>
       <div class="nav">
-        <NavHeader v-for="(element, index) in menu" :key="index" :link="element" :counter="counter" @changeAct="changeActive" />
+        <NavHeader v-for="(element, index) in menu" :key="index" :link="element" :counter="counter" @click.native="changeActive(element.id)" />
         <img src="../assets/illustration/svg/svg-1.svg" />
       </div>
     </div>
@@ -28,7 +28,7 @@ export default {
 
   data() {
     return {
-      counter:1,
+      counter: 1,
       menu: [
         {
           name: "Home",
@@ -72,8 +72,7 @@ export default {
 
   methods: {
     changeActive: function (input) {
-      this.counter == input
-      console.log(input);
+      this.counter = input;
     },
   },
 };
